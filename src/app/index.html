@@ -1,1 +1,24 @@
-Acksj�n
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acksjön</title>
+</head>
+
+<body>
+  <main>
+    <h1>Acksjön</h1>
+    <p>Api: <b id="api">Laddar...</b></p>
+  </main>
+
+  <script>
+    (async function () {
+      const status = await (await fetch(`/api/status`)).json();
+      document.querySelector('#api').textContent = status;
+    }())
+  </script>
+</body>
+
+</html>
