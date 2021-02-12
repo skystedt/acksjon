@@ -10,13 +10,13 @@
 <body>
   <main>
     <h1>Acksjön</h1>
-    <p>Api: <b id="api">Laddar...</b></p>
+    <p>Test: <b id="api">Laddar...</b></p>
   </main>
 
   <script>
     (async function () {
-      const status = await (await fetch(`/api/status`)).text();
-      document.querySelector('#api').textContent = status;
+      const timestamp = await (await fetch(`/api/test`)).json();
+      document.querySelector('#api').textContent = new Date(timestamp).toLocaleString();
     }())
   </script>
 </body>
